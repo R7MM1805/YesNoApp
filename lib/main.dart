@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yes_no_app/config/theme/app_theme.dart';
 
 void main(List<String> args) => runApp(const MyApp());
 
@@ -8,13 +9,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Yes No App',
+      theme: AppTheme(selectedColor: 6).theme(),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('aaa'),
+          title: const Text('Yes No App'),
         ),
-        body: const Center(
-          child: Text('sss'),
+        body: Center(
+          child: FilledButton.tonal(
+            onPressed: () {},
+            child: const Text('Click me'),
+          ),
         ),
       ),
     );
